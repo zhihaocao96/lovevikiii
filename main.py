@@ -34,11 +34,7 @@ def get_birthday():
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
-def get_words():
-  words = requests.get("note_ch, note_en = get_ciba()")
-  if words.status_code != 200:
-    return get_words()
-  return words.json()['data']['text']
+note_ch, note_en = get_ciba()
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
