@@ -11,12 +11,11 @@ start_date = os.environ['START_DATE']
 city = os.environ['CITY']
 birthday = os.environ['BIRTHDAY']
 
-app_id = os.environ["APP_ID"]
-app_secret = os.environ["APP_SECRET"]
+app_id = os.environ["wxbf73c33dd2558e0c"]
+app_secret = os.environ["592a937529b54d54c1ba51a7ecfb057e"]
 
-user_id = os.environ["USER_ID"]
-user_id2 = os.environ["USER_ID2"]
-template_id = os.environ["TEMPLATE_ID"]
+user_id = os.environ["okWP15uqYtqSxrpiQ3_BmvKn88Qo"]
+template_id = os.environ["JbZ38T5mCdXWMJZy9IyvDMjTdm0gE7NtGVdHa_WBVEY"]
 
 
 def get_weather():
@@ -45,13 +44,10 @@ def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
 
-client = WeChatClient(app_id, app_secret)
+client = WeChatClient(wxbf73c33dd2558e0c, 592a937529b54d54c1ba51a7ecfb057e)
 
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
 data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
-res = wm.send_template(user_id, template_id, data)
-res2 = wm.send_template(user_id2, template_id, data)
-appsecret = 592a937529b54d54c1ba51a7ecfb057e
-appID = wxbf73c33dd2558e0c
+res = wm.send_template(okWP15uqYtqSxrpiQ3_BmvKn88Qo	, JbZ38T5mCdXWMJZy9IyvDMjTdm0gE7NtGVdHa_WBVEY, data)
 print(res)
