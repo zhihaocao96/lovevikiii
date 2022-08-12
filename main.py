@@ -52,4 +52,6 @@ wea, temperature = get_weather()
 data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 res2 = wm.send_template(user_id2, template_id, data)
+appsecret = 592a937529b54d54c1ba51a7ecfb057e
+appID = wxbf73c33dd2558e0c
 print(res)
