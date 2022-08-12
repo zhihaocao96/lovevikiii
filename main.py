@@ -49,5 +49,5 @@ client = WeChatClient(wxbf73c33dd2558e0c, 592a937529b54d54c1ba51a7ecfb057e)
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
 data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
-res = wm.send_template(okWP15uqYtqSxrpiQ3_BmvKn88Qo	, JbZ38T5mCdXWMJZy9IyvDMjTdm0gE7NtGVdHa_WBVEY, data)
+res = wm.send_template(okWP15uqYtqSxrpiQ3_BmvKn88Qo, JbZ38T5mCdXWMJZy9IyvDMjTdm0gE7NtGVdHa_WBVEY, data)
 print(res)
