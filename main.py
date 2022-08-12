@@ -34,7 +34,11 @@ def get_birthday():
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
-note_ch, note_en = get_ciba()
+def get_words():
+  words = requests.get("https://chp.shadiao.pro/chp")
+  if words.status_code != 200:
+    return get_words()
+  return words.json()['data']['text']
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
@@ -47,4 +51,3 @@ wea, temperature = get_weather()
 data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
-send_message(user, accessToken, city, weather, max_temperature, min_temperature, note_ch, note_en)
